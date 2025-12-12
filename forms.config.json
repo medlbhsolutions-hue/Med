@@ -1,0 +1,24 @@
+{
+  "name": "medlbh-registration-forms",
+  "description": "Formulaires d'inscription MedLBH Solutions",
+  "forms": [
+    {
+      "id": "launch-activity",
+      "name": "Formulaire Lancement d'Activité",
+      "path": "/desktop/medlbh_formulaires/formulaire_lancement_activite.html",
+      "fields": ["clinic_name", "location", "specialties", "team_size"]
+    },
+    {
+      "id": "international-doctor",
+      "name": "Formulaire Médecin International",
+      "path": "/desktop/medlbh_formulaires/formulaire_medecin_international.html",
+      "fields": ["name", "email", "specialization", "experience"]
+    },
+    {
+      "id": "clinic-recruitment",
+      "name": "Formulaire Recrutement Clinique",
+      "path": "/desktop/medlbh_formulaires/formulaire_recrutement_clinique.html",
+      "fields": ["position", "requirements", "salary", "contact"]
+    }
+  ]
+}

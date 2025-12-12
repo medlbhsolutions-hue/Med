@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire Lancement d'Activité - MedLBH Solutions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f5f9ff;
+            color: #333;
+        }
+        .header {
+            background-color: #0056b3;
+            color: white;
+            padding: 20px 0;
+            margin-bottom: 30px;
+        }
+        .logo-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 10px;
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .form-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        .section-title {
+            color: #0056b3;
+            border-bottom: 2px solid #ff6b00;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .btn-primary {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        .btn-primary:hover {
+            background-color: #003d80;
+            border-color: #003d80;
+        }
+        .required-field::after {
+            content: " *";
+            color: #ff6b00;
+        }
+        .highlight-box {
+            background-color: rgba(255, 107, 0, 0.1);
+            border-left: 4px solid #ff6b00;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header text-center">
+        <div class="logo-container">
+            <img src="/home/ubuntu/presentation_images/medlbh_logo.jpeg" alt="MedLBH Solutions Logo" height="60">
+        </div>
+        <h1>Formulaire d'Accompagnement au Lancement d'Activité</h1>
+        <p>Pour les établissements de santé en création ou en développement</p>
+    </div>
+
+    <div class="container">
+        <div class="highlight-box">
+            <h5><i class="fas fa-info-circle"></i> Un monitoring dès le lancement évite l'installation de mauvaises conduites</h5>
+            <p>Notre accompagnement vous permet de structurer votre activité selon les meilleures pratiques dès le départ.</p>
+        </div>
+
+        <div class="form-container">
+            <form id="activityLaunchForm">
+                <!-- Informations sur le projet -->
+                <h3 class="section-title">Informations sur le projet</h3>
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <label for="projectName" class="form-label required-field">Nom du projet/établissement</label>
+                        <input type="text" class="form-control" id="projectName" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="projectType" class="form-label required-field">Type d'établissement</label>
+                        <select class="form-select" id="projectType" required>
+                            <option value="" selected disabled>Sélectionner...</option>
+                            <option value="clinique_privee">Clinique privée</option>
+                            <option value="centre_medical">Centre médical</option>
+                            <option value="cabinet_medical">Cabinet médical</option>
+                            <option value="centre_imagerie">Centre d'imagerie</option>
+                            <option value="laboratoire">Laboratoire d'analyses</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <label for="projectStatus" class="form-label required-field">État d'avancement du projet</label>
+                        <select class="form-select" id="projectStatus" required>
+                            <option value="" selected disabled>Sélectionner...</option>
+                            <option value="idea">Idée/Concept</option>
+                            <option value="planning">Planification</option>
+                            <option value="financing">Recherche de financement</option>
+                            <option value="construction">En construction</option>
+                            <option value="equipment">En phase d'équipement</option>
+                            <option value="recruitment">En phase de recrutement</option>
+                            <option value="pre_opening">Pré-ouverture</option>
+                            <option value="expansion">Extension d'activité existante</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="targetOpeningDate" class="form-label">Date d'ouverture prévue</label>
+                        <input type="date" class="form-control" id="targetOpeningDate">
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <label for="location" class="form-label required-field">Ville</label>
+                        <input type="text" class="form-control" id="location" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="country" class="form-label required-field">Pays</label>
+                        <input type="text" class="form-control" id="country" required>
+                    </div>
+                </div>
+
+                <!-- Porteur du projet -->
+                <h3 class="section-title">Porteur du projet</h3>
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <label for="contactName" class="form-label required-field">Nom complet</label>
+                        <input type="text" class="form-control" id="contactName" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="contactRole" class="form-label required-field">Fonction/Rôle dans le projet</label>
+                        <input type="text" class="form-control" id="contactRole" required>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <label for="contactEmail" class="form-label required-field">Email</label>
+                        <input type="email" class="form-control" id="contactEmail" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="contactPhone" class="form-label required-field">Téléphone</label>
+                        <input type="tel" class="form-control" id="contactPhone" required>
+                    </div>
+                </div>
+
+                <!-- Besoins d'accompagnement -->
+                <h3 class="section-title">Besoins d'accompagnement</h3>
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <label class="form-label required-field">Services requis (plusieurs choix possibles)</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="feasibilityStudy">
+                            <label class="form-check-label" for="feasibilityStudy">Étude de faisabilité</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="businessPlan">
+                            <label class="form-check-label" for="businessPlan">Business plan</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="teamRecruitment">
+                            <label class="form-check-label" for="teamRecruitment">Constitution d'équipe médicale</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="patientJourney">
+                            <label class="form-check-label" for="patientJourney">Élaboration du parcours patient</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="qualityProcedures">
+                            <label class="form-check-label" for="qualityProcedures">Procédures qualité</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="certification">
+                            <label class="form-check-label" for="certification">Assistance à la certification</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="staffTraining">
+                            <label class="form-check-label" for="staffTraining">Formation du personnel</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="monitoring">
+                            <label class="form-check-label" for="monitoring">Monitoring des activités</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="foreignDoctors">
+                            <label class="form-check-label" for="foreignDoctors">Accompagnement administratif pour médecins étrangers</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Détails du projet -->
+                <h3 class="section-title">Détails du projet</h3>
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <label for="projectSize" class="form-label">Taille du projet</label>
+                        <select class="form-select" id="projectSize">
+                            <option value="" selected disabled>Sélectionner...</option>
+                            <option value="small">Petit (< 10 employés)</option>
+                            <option value="medium">Moyen (10-50 employés)</option>
+                            <option value="large">Grand (> 50 employés)</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="investmentRange" class="form-label">Budget d'investissement estimé</label>
+                        <select class="form-select" id="investmentRange">
+                            <option value="" selected disabled>Sélectionner...</option>
+                            <option value="range1">< 500 000 €</option>
+                            <option value="range2">500 000 € - 1 million €</option>
+                            <option value="range3">1 - 5 millions €</option>
+                            <option value="range4">5 - 10 millions €</option>
+                            <option value="range5">> 10 millions €</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <label for="specialties" class="form-label">Spécialités prévues</label>
+                        <textarea class="form-control" id="specialties" rows="3" placeholder="Listez les spécialités médicales prévues dans votre établissement..."></textarea>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="equipments" class="form-label">Équipements majeurs prévus</label>
+                        <textarea class="form-control" id="equipments" rows="3" placeholder="Listez les équipements médicaux majeurs prévus..."></textarea>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <label for="projectDescription" class="form-label required-field">Description du projet</label>
+                        <textarea class="form-control" id="projectDescription" rows="5" required placeholder="Décrivez votre projet, ses objectifs, son positionnement et les défis anticipés..."></textarea>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <label for="specificNeeds" class="form-label">Besoins spécifiques</label>
+                        <textarea class="form-control" id="specificNeeds" rows="3" placeholder="Précisez vos attentes particulières concernant l'accompagnement..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Documents -->
+                <h3 class="section-title">Documents (optionnels)</h3>
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <label for="businessPlanUpload" class="form-label">Business plan existant (PDF)</label>
+                        <input type="file" class="form-control" id="businessPlanUpload" accept=".pdf">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="architecturalPlans" class="form-label">Plans architecturaux (PDF)</label>
+                        <input type="file" class="form-control" id="architecturalPlans" accept=".pdf">
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="consentCheck" required>
+                            <label class="form-check-label required-field" for="consentCheck">
+                                J'accepte que mes données personnelles soient traitées par MedLBH Solutions dans le cadre de ma demande d'accompagnement.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn btn-primary btn-lg">Soumettre ma demande d'accompagnement</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-muted py-4">
+        <div class="container">
+            <p>© 2025 MedLBH Solutions - Medical & Human Bridges</p>
+            <p>Contact : llabhilil@yahoo.fr | +212 6 90 40 52 69</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
