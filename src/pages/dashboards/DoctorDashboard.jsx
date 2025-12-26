@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import ProfileSection from '../../components/dashboard/ProfileSection';
 import AppointmentsSection from '../../components/dashboard/AppointmentsSection';
+import logo from '../../assets/images/logo-premium.png';
 import {
     Users,
     Calendar,
@@ -117,7 +118,7 @@ const DoctorDashboard = () => {
             {/* SIDEBAR */}
             <aside className={`dashboard-sidebar ${sidebarOpen ? 'open' : ''}`}>
                 <div className="sidebar-header">
-                    <div className="sidebar-logo">MedLBH</div>
+                    <img src={logo} alt="MedLBH Logo" className="sidebar-logo-img" />
                 </div>
 
                 <nav className="sidebar-nav">

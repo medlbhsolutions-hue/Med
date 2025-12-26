@@ -27,7 +27,9 @@
 /* ==================== LAYOUT ==================== */
 .dashboard-container {
     display: flex;
-    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
+    /* Empêche le scroll global */
     background-color: #f7fafc;
     font-family: 'Inter', sans-serif;
 }
@@ -36,10 +38,8 @@
 .dashboard-sidebar {
     width: var(--sidebar-width);
     background: white;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
+    height: 100%;
+    flex-shrink: 0;
     z-index: 50;
     display: flex;
     flex-direction: column;
@@ -52,18 +52,14 @@
     height: var(--header-height);
     display: flex;
     align-items: center;
-    padding: 0 2rem;
+    justify-content: center;
+    padding: 0 1rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.03);
 }
 
-.sidebar-logo {
-    font-family: 'Outfit', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 800;
-    background: var(--primary-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.sidebar-logo-img {
+    height: 40px;
+    width: auto;
 }
 
 .sidebar-nav {
@@ -111,9 +107,12 @@
 /* ==================== MAIN CONTENT ==================== */
 .dashboard-main {
     flex: 1;
-    margin-left: var(--sidebar-width);
+    height: 100%;
+    overflow-y: auto;
+    /* Active le scroll sur le contenu principal */
     padding: 2rem;
-    transition: margin-left 0.3s ease;
+    position: relative;
+    /* transition: margin-left 0.3s ease; Removed as margin is not used with flex layout for sidebar opening usually, or if used, it should be consistent */
 }
 
 /* ==================== HEADER ==================== */
