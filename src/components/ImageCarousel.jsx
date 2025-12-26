@@ -9,7 +9,7 @@ import img6 from '../assets/images/Capture d’écran 2025-10-09 110914.png';
 import img7 from '../assets/images/Capture d’écran 2025-10-09 110935.png';
 import img8 from '../assets/images/Capture d’écran 2025-10-09 110955.png';
 import img9 from '../assets/images/logo.png';
-import img10 from '../assets/images/team_medical.png.png';
+import img10 from '../assets/images/team_medical.png';
 import img11 from '../assets/images/Capture d’écran 2025-10-08 170329.png';
 import img12 from '../assets/images/Capture d’écran 2025-10-08 172033.png';
 

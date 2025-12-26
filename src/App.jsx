@@ -9,11 +9,13 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import DashboardPage from './pages/DashboardPage';
 import NewsPage from './pages/NewsPage';
+import ProductsPage from './pages/ProductsPage';
 import ServicePolesPage from './pages/ServicePolesPage';
 import ContactPage from './pages/ContactPage';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import ResetPasswordPage from './pages/ResetPasswordPage';
 import FirstFormPage from './pages/FirstFormPage';
+import AboutPage from './pages/AboutPage';
 import './index.css';
 
 function App() {
@@ -30,16 +32,18 @@ function App() {
               <Route path="/forgot-password" element={<ForgotPasswordPage />} />
               <Route path="/reset-password/:token" element={<ResetPasswordPage />} />
               <Route path="/first-form" element={<ProtectedRoute><FirstFormPage /></ProtectedRoute>} />
-              <Route 
-                path="/dashboard" 
+              <Route
+                path="/dashboard"
                 element={
                   <ProtectedRoute>
                     <DashboardPage />
                   </ProtectedRoute>
-                } 
+                }
               />
               <Route path="/news" element={<NewsPage />} />
+              <Route path="/products" element={<ProductsPage />} />
               <Route path="/services" element={<ServicePolesPage />} />
+              <Route path="/about" element={<AboutPage />} />
               <Route path="/contact" element={<ContactPage />} />
             </Routes>
           </main>

@@ -1,8 +1,10 @@
-import { Mail, Phone, MapPin, Globe } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Mail, Phone, MapPin, Send, CheckCircle2, ArrowRight, MessageCircle } from 'lucide-react';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-const ContactSection = ({ onPlanifierClick }) => {
-  const [form, setForm] = useState({ nom: '', prenom: '', fonction: '', email: '', message: '' });
+const ContactSection = () => {
+  const [form, setForm] = useState({ nom: '', email: '', message: '' });
   const [sent, setSent] = useState(false);
 
   const handleChange = e => {
@@ -11,176 +13,248 @@ const ContactSection = ({ onPlanifierClick }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    // Ici, tu peux ajouter la logique d'envoi d'email ou d'appel API
     setSent(true);
+    setTimeout(() => {
+      setSent(false);
+      setForm({ nom: '', email: '', message: '' });
+    }, 5000);
   };
 
+  const contactInfo = [
+    {
+      icon: Phone,
+      label: 'Téléphone',
+      value: '+212 6 90 40 52 69',
+      link: 'tel:+212690405269',
+    },
+    {
+      icon: Mail,
+      label: 'Email',
+      value: 'llabhilil@yahoo.fr',
+      link: 'mailto:llabhilil@yahoo.fr',
+    },
+    {
+      icon: MapPin,
+      label: 'Localisation',
+      value: 'Casablanca - Grenoble',
+    },
+  ];
+
   return (
-    <section className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className="section-title">Contact & Prochaines étapes</h2>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section className="relative py-20 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50">
+      {/* Background Effects */}
+      <div className="absolute inset-0">
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.05, 0.1, 0.05],
+          }}
+          transition={{ duration: 8, repeat: Infinity }}
+          className="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-br from-[#5de0e6] to-[#00A8E8] rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            scale: [1.2, 1, 1.2],
+            opacity: [0.05, 0.08, 0.05],
+          }}
+          transition={{ duration: 10, repeat: Infinity, delay: 1 }}
+          className="absolute bottom-0 -right-40 w-96 h-96 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full blur-3xl"
+        />
+      </div>
+
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#00A8E8]/10 to-[#5de0e6]/10 border border-[#00A8E8]/20 rounded-full mb-6"
+          >
+            <MessageCircle size={16} className="text-[#00A8E8]" />
+            <span className="text-sm font-semibold text-[#00A8E8]">Contactez-nous</span>
+          </motion.div>
+
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            Parlons de votre projet
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Notre équipe est à votre écoute pour transformer vos ambitions en réalité
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* Contact Info */}
-          <div>
-            <h3 className="text-2xl font-bold text-primary mb-8">MedLBH Solutions</h3>
-            
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="bg-primary text-white rounded-full p-3">
-                  <Phone size={20} />
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-800">Fondatrice</p>
-                  <p className="text-gray-600">Nadia Labhilil</p>
-                </div>
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 h-full">
+              <h3 className="text-2xl font-bold text-gray-900 mb-8">Informations de contact</h3>
+
+              <div className="space-y-6 mb-8">
+                {contactInfo.map((item, index) => {
+                  const Icon = item.icon;
+                  return (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      className="flex items-start gap-4"
+                    >
+                      <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#00A8E8] to-[#5de0e6] flex items-center justify-center shadow-md">
+                        <Icon size={20} className="text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <p className="font-semibold text-gray-500 text-sm mb-1">{item.label}</p>
+                        {item.link ? (
+                          <a
+                            href={item.link}
+                            className="text-gray-900 hover:text-[#00A8E8] transition-colors font-medium text-lg"
+                          >
+                            {item.value}
+                          </a>
+                        ) : (
+                          <p className="text-gray-900 font-medium text-lg">{item.value}</p>
+                        )}
+                      </div>
+                    </motion.div>
+                  );
+                })}
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="bg-primary text-white rounded-full p-3">
-                  <Mail size={20} />
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-800">Email</p>
-                  <a href="mailto:llabhilil@yahoo.fr" className="text-primary hover:underline">
-                    llabhilil@yahoo.fr
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="bg-primary text-white rounded-full p-3">
-                  <Phone size={20} />
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-800">Téléphone</p>
-                  <a href="tel:+212690405269" className="text-primary hover:underline">
-                    +212 6 90 40 52 69
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="bg-primary text-white rounded-full p-3">
-                  <MapPin size={20} />
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-800">Siège</p>
-                  <p className="text-gray-600">Casablanca - Grenoble</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="bg-primary text-white rounded-full p-3">
-                  <Globe size={20} />
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-800">Site Web</p>
-                  <a href="http://www.medlbhsolutions.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                    www.medlbhsolutions.com
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <button className="btn-primary mt-8 w-full" onClick={onPlanifierClick}>
-              📅 Planifier un rendez-vous
-            </button>
-          </div>
-
-          {/* Next Steps */}
-          <div>
-            <h3 className="text-2xl font-bold text-primary mb-8">Prochaines étapes</h3>
-            
-            <div className="space-y-8">
-              {[
-                {
-                  step: 1,
-                  title: 'Consultation initiale',
-                  description: 'Évaluation de vos besoins spécifiques'
-                },
-                {
-                  step: 2,
-                  title: 'Proposition personnalisée',
-                  description: 'Solutions adaptées à votre clinique'
-                },
-                {
-                  step: 3,
-                  title: 'Mise en œuvre',
-                  description: 'Accompagnement et suivi régulier'
-                },
-              ].map((item, index) => (
-                <div key={index} className="flex gap-6">
-                  <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-full bg-primary text-white font-bold text-lg">
-                      {item.step}
-                    </div>
+              {/* Founder Info */}
+              <div className="pt-6 border-t border-gray-200">
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#00A8E8] to-[#5de0e6] rounded-full flex items-center justify-center text-white font-bold text-xl">
+                    NL
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-gray-800">{item.title}</h4>
-                    <p className="text-gray-600">{item.description}</p>
+                    <p className="font-bold text-gray-900 text-lg">Nadia Labhilil</p>
+                    <p className="text-gray-600 text-sm">Fondatrice & CEO</p>
                   </div>
                 </div>
-              ))}
+              </div>
             </div>
-          </div>
+          </motion.div>
+
+          {/* Contact Form */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 h-full">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Envoyez-nous un message</h3>
+
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div>
+                  <label className="block text-sm font-bold text-gray-700 mb-2">
+                    Nom complet <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="nom"
+                    value={form.nom}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#00A8E8] focus:ring-4 focus:ring-[#00A8E8]/10 transition-all"
+                    placeholder="Votre nom et prénom"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-bold text-gray-700 mb-2">
+                    Email <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={form.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#00A8E8] focus:ring-4 focus:ring-[#00A8E8]/10 transition-all"
+                    placeholder="votre.email@exemple.com"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-bold text-gray-700 mb-2">
+                    Message <span className="text-red-500">*</span>
+                  </label>
+                  <textarea
+                    name="message"
+                    value={form.message}
+                    onChange={handleChange}
+                    required
+                    rows={5}
+                    className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#00A8E8] focus:ring-4 focus:ring-[#00A8E8]/10 transition-all resize-none"
+                    placeholder="Décrivez votre projet ou vos besoins..."
+                  />
+                </div>
+
+                <motion.button
+                  type="submit"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full py-4 px-8 bg-gradient-to-r from-[#00A8E8] to-[#5de0e6] text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3 group"
+                >
+                  <Send size={20} />
+                  Envoyer le message
+                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                </motion.button>
+              </form>
+
+              {/* Success Message */}
+              {sent && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="mt-6 p-5 rounded-2xl bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center flex-shrink-0">
+                      <CheckCircle2 size={20} className="text-white" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-green-800">Message envoyé avec succès !</p>
+                      <p className="text-green-600 text-sm">Nous vous répondrons rapidement.</p>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </div>
+          </motion.div>
         </div>
 
-        {/* Contact Form */}
-        <div className="max-w-2xl mx-auto bg-gradient-to-br from-blue-50 to-white rounded-2xl shadow-2xl p-10 mt-8">
-          <h2 className="text-3xl font-extrabold text-blue-700 mb-8 text-center tracking-tight">Contactez-nous</h2>
-          <form className="space-y-6" onSubmit={handleSubmit}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-base font-bold text-blue-700 mb-2">Nom</label>
-                <input type="text" name="nom" value={form.nom} onChange={handleChange} required className="w-full border-2 border-blue-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white shadow-sm transition-all duration-200" placeholder="Votre nom" />
-              </div>
-              <div>
-                <label className="block text-base font-bold text-blue-700 mb-2">Prénom</label>
-                <input type="text" name="prenom" value={form.prenom} onChange={handleChange} required className="w-full border-2 border-blue-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white shadow-sm transition-all duration-200" placeholder="Votre prénom" />
-              </div>
-            </div>
-            <div>
-              <label className="block text-base font-bold text-blue-700 mb-2">Fonction</label>
-              <input type="text" name="fonction" value={form.fonction} onChange={handleChange} className="w-full border-2 border-blue-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white shadow-sm transition-all duration-200" placeholder="Votre fonction" />
-            </div>
-            <div>
-              <label className="block text-base font-bold text-blue-700 mb-2">Email</label>
-              <input type="email" name="email" value={form.email} onChange={handleChange} required className="w-full border-2 border-blue-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white shadow-sm transition-all duration-200" placeholder="Votre email" />
-            </div>
-            <div>
-              <label className="block text-base font-bold text-blue-700 mb-2">Message</label>
-              <textarea name="message" value={form.message} onChange={handleChange} required className="w-full border-2 border-blue-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white shadow-sm transition-all duration-200 resize-none" rows={4} placeholder="Votre message..." />
-            </div>
-            <button type="submit" className="w-full bg-blue-700 text-white px-8 py-3 rounded-xl font-bold text-lg shadow-lg hover:bg-blue-800 transition-all duration-200 transform hover:scale-105 active:scale-95">
-              Envoyer
-            </button>
-          </form>
-          {sent && (
-            <div className="mt-8 flex flex-col items-center justify-center animate-bounce-in">
-              <svg className="w-14 h-14 text-green-500 mb-2 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="white" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4" />
-              </svg>
-              <div className="text-green-700 font-bold text-xl bg-green-100 px-6 py-4 rounded-xl shadow-lg animate-fade-in">
-                Votre message a été envoyé !
-              </div>
-            </div>
-          )}
-          <div className="mt-10 border-t pt-8">
-            <h3 className="text-lg font-bold text-blue-700 mb-2">Nos coordonnées</h3>
-            <p>Email : llabhilil@yahoo.fr</p>
-            <p>Téléphone : +212 6 90 40 52 69</p>
-            <p>Siège : Casablanca – Grenoble</p>
-          </div>
-        </div>
+        {/* CTA to Full Contact Page */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mt-12"
+        >
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-2 text-[#00A8E8] hover:text-[#0096d1] font-semibold transition-colors group"
+          >
+            Voir toutes les options de contact
+            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
 };
 
 export default ContactSection;
-
-// Styles Tailwind à ajouter :
-// .input: w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50
-// .btn-primary: bg-blue-700 text-white px-6 py-2 rounded hover:bg-blue-800 transition

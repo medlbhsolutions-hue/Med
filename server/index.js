@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import mongoose from 'mongoose';
+// import mongoose from 'mongoose'; // Removed Mongoose
 import authRoutes from './routes/auth.js';
 import clinicRoutes from './routes/clinics.js';
 import chatRoutes from './routes/chat.js';
@@ -11,16 +11,12 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/medlbh';
 
 // Middleware
 app.use(cors());
 app.use(express.json());
 
-// MongoDB Connection
-mongoose.connect(MONGODB_URI)
-  .then(() => console.log('MongoDB connecté'))
-  .catch(err => console.error('Erreur MongoDB:', err));
+// Supabase is configured in ./config/supabase.js and used in routes/controllers
 
 // Routes
 app.use('/api/auth', authRoutes);
