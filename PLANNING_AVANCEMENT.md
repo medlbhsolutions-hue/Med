@@ -134,14 +134,24 @@
 ## 🚧 MODULES EN COURS (70%)
 
 ### 🔄 5. TABLEAU DE BORD UTILISATEUR
-- [x] Structure de base du dashboard
-- [x] Navigation du dashboard
+- [x] Structure de base du dashboard (Layout Premium)
+- [x] Navigation du dashboard (SideBar + TopBar)
 - [x] Affichage des informations utilisateur
-- [ ] Gestion du profil utilisateur (70%)
-- [ ] Historique des rendez-vous (60%)
+- [x] Widgets statistiques animés
+- [x] Gestion du profil utilisateur (UI Premium + Formulaires)
+- [x] Historique des rendez-vous (Vue Timeline + Actions)
 - [ ] Notifications en temps réel (40%)
 
-**Progression** : 70%  
+**Progression** : 90%  
+**Statut** : 🟢 TERMINÉ (MVP)
+
+### 📅 6. GESTION DES RENDEZ-VOUS (NOUVEAU)
+- [x] Interface Agenda (Vue Jour/Liste)
+- [x] Création de RDV (UI)
+- [ ] Intégration Calendrier (Drag & Drop)
+- [ ] Logique Backend RDV
+
+**Progression** : 50%
 **Statut** : 🟡 EN COURS
 
 ---
