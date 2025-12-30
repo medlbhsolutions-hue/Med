@@ -16,6 +16,9 @@ import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import ResetPasswordPage from './pages/ResetPasswordPage';
 import FirstFormPage from './pages/FirstFormPage';
 import AboutPage from './pages/AboutPage';
+import ClinicsPage from './pages/ClinicsPage';
+import ClinicDetailPage from './pages/ClinicDetailPage';
+import ScrollToTop from './components/ScrollToTop';
 import './index.css';
 
 function AppContent() {
@@ -43,6 +46,8 @@ function AppContent() {
           />
           <Route path="/news" element={<NewsPage />} />
           <Route path="/products" element={<ProductsPage />} />
+          <Route path="/clinics" element={<ClinicsPage />} />
+          <Route path="/clinics/:id" element={<ClinicDetailPage />} />
           <Route path="/services" element={<ServicePolesPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
@@ -57,6 +62,7 @@ function AppContent() {
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <AuthProvider>
         <AppContent />
       </AuthProvider>
