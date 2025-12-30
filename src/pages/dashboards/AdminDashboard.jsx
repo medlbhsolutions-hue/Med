@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import ProfileSection from '../../components/dashboard/ProfileSection';
+import AppointmentsSection from '../../components/dashboard/AppointmentsSection';
+import ClinicsManagementSection from '../../components/dashboard/ClinicsManagementSection';
 import logo from '../../assets/images/logo-premium.png';
 import {
     Shield,
@@ -13,7 +15,9 @@ import {
     LogOut,
     Database,
     Lock,
-    UserCheck
+    UserCheck,
+    Calendar,
+    Building2 // Added Building2 icon
 } from 'lucide-react';
 import '../Dashboard.css';
 
@@ -89,8 +93,12 @@ const AdminDashboard = () => {
         switch (activeSection) {
             case 'profile':
                 return <ProfileSection />;
+            case 'clinics': // Added case
+                return <ClinicsManagementSection />;
             case 'users':
                 return <UserManagementSection />;
+            case 'appointments':
+                return <AppointmentsSection />;
             case 'overview':
             default:
                 return (
@@ -136,7 +144,9 @@ const AdminDashboard = () => {
     const getHeaderTitle = () => {
         switch (activeSection) {
             case 'profile': return { title: 'Profil Administrateur', subtitle: 'Sécurité du compte racine.' };
+            case 'clinics': return { title: 'Gestion des Partenaires', subtitle: 'Ajoutez ou modifiez les cliniques du réseau.' };
             case 'users': return { title: 'Utilisateurs', subtitle: 'Gestion globale des comptes.' };
+            case 'appointments': return { title: 'Gestion des Rendez-vous', subtitle: 'Suivi des demandes et planning.' };
             default: return { title: 'Administration Système', subtitle: 'Vue globale de la plateforme.' };
         }
     }
@@ -157,6 +167,22 @@ const AdminDashboard = () => {
                     >
                         <Home className="nav-icon" />
                         <span>Vue d'ensemble</span>
+                    </div>
+                    {/* Added Appointments Nav Item */}
+                    <div
+                        className={`nav-item ${activeSection === 'appointments' ? 'active' : ''}`}
+                        onClick={() => setActiveSection('appointments')}
+                    >
+                        <Calendar className="nav-icon" />
+                        <span>Rendez-vous</span>
+                    </div>
+                    {/* Added Clinics Nav Item */}
+                    <div
+                        className={`nav-item ${activeSection === 'clinics' ? 'active' : ''}`}
+                        onClick={() => setActiveSection('clinics')}
+                    >
+                        <Building2 className="nav-icon" />
+                        <span>Cliniques</span>
                     </div>
                     <div
                         className={`nav-item ${activeSection === 'users' ? 'active' : ''}`}

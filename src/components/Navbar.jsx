@@ -26,7 +26,7 @@ const Navbar = () => {
     { label: 'MedLBH', to: '/about' },
     { label: 'Services', to: '/services', hasDropdown: true },
     { label: 'Produits', to: '/products' },
-    { label: 'Nos partenaires', to: '/partners' },
+    { label: 'Cliniques', to: '/clinics' },
     { label: 'Actualités', to: '/news' },
     { label: 'Contact', to: '/contact' },
   ];
@@ -74,8 +74,8 @@ const Navbar = () => {
                   key={item.to}
                   to={item.to}
                   className={`group relative flex items-center gap-1.5 text-[15px] font-medium transition-all duration-200 ${isActive(item.to)
-                      ? 'text-[#00A8E8]'
-                      : 'text-gray-700 hover:text-[#00A8E8]'
+                    ? 'text-[#00A8E8]'
+                    : 'text-gray-700 hover:text-[#00A8E8]'
                     }`}
                 >
                   {item.label}
@@ -83,8 +83,8 @@ const Navbar = () => {
                     <ChevronDown
                       size={14}
                       className={`transition-all duration-200 ${isActive(item.to)
-                          ? 'text-[#00A8E8]'
-                          : 'text-gray-400 group-hover:text-[#00A8E8]'
+                        ? 'text-[#00A8E8]'
+                        : 'text-gray-400 group-hover:text-[#00A8E8]'
                         }`}
                     />
                   )}
@@ -125,8 +125,8 @@ const Navbar = () => {
                           key={lang.code}
                           onClick={() => handleLanguageChange(lang.code)}
                           className={`w-full flex items-center gap-3 px-4 py-3 text-left transition-colors ${currentLang === lang.code
-                              ? 'bg-blue-50 text-[#00A8E8]'
-                              : 'text-gray-700 hover:bg-gray-50'
+                            ? 'bg-blue-50 text-[#00A8E8]'
+                            : 'text-gray-700 hover:bg-gray-50'
                             }`}
                         >
                           <span className="text-xl">{lang.flag}</span>
@@ -206,8 +206,8 @@ const Navbar = () => {
                   key={item.to}
                   to={item.to}
                   className={`flex items-center justify-between px-4 py-3.5 text-base rounded-lg transition-all ${isActive(item.to)
-                      ? 'text-[#00A8E8] font-semibold bg-blue-50'
-                      : 'text-gray-700 hover:bg-gray-50'
+                    ? 'text-[#00A8E8] font-semibold bg-blue-50'
+                    : 'text-gray-700 hover:bg-gray-50'
                     }`}
                   onClick={() => setIsOpen(false)}
                 >
@@ -230,8 +230,8 @@ const Navbar = () => {
                         setIsOpen(false);
                       }}
                       className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${currentLang === lang.code
-                          ? 'bg-blue-50 text-[#00A8E8] font-semibold'
-                          : 'text-gray-700 hover:bg-gray-50'
+                        ? 'bg-blue-50 text-[#00A8E8] font-semibold'
+                        : 'text-gray-700 hover:bg-gray-50'
                         }`}
                     >
                       <span className="text-xl">{lang.flag}</span>
