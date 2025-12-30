@@ -16,10 +16,13 @@ const ClinicsPage = () => {
 
     const fetchClinics = async () => {
         try {
-            const { data } = await clinicService.getAll();
-            setClinics(data || []);
+            const response = await clinicService.getAll();
+            // Handle Axios response vs direct data
+            const data = response.data || response;
+            setClinics(Array.isArray(data) ? data : []);
         } catch (error) {
             console.error(error);
+            setClinics([]);
         } finally {
             setLoading(false);
         }
