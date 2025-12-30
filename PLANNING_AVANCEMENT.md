@@ -160,24 +160,27 @@
 ### 🔄 6. GESTION DES RENDEZ-VOUS
 - [x] Composant RendezVousPlanner
 - [x] Sélection de date et heure
-- [ ] Intégration avec l'API backend (80%)
+- [x] Intégration avec l'API backend (100%)
+- [x] Gestion des statuts (Admin/Docteur)
 - [ ] Confirmation par email (50%)
 - [ ] Système de rappels (30%)
 
-**Progression** : 65%  
-**Statut** : 🟡 EN COURS
+**Progression** : 90%  
+**Statut** : ✅ VALIDÉ (Sauf Emailing)
 
 ---
 
 ### 🔄 7. GESTION DES CLINIQUES
 - [x] API de création de clinique
 - [x] API de récupération des cliniques
-- [ ] Interface d'administration des cliniques (60%)
+- [x] Interface d'administration des cliniques (100%)
+- [x] Page Liste (Publique)
+- [x] Page Détail (Publique)
 - [ ] Gestion des médecins par clinique (40%)
 - [ ] Statistiques par clinique (30%)
 
-**Progression** : 60%  
-**Statut** : 🟡 EN COURS
+**Progression** : 90%  
+**Statut** : ✅ FONCTIONNEL (Admin + Public)
 
 ---
 
@@ -202,6 +205,17 @@
 
 **Progression** : 15%  
 **Statut** : 🔵 PLANIFIÉ
+
+---
+
+### 🔄 4. GESTION DES UTILISATEURS (ADMIN)
+- [x] Liste des utilisateurs
+- [x] Modification des rôles (Admin/Docteur/Patient)
+- [x] Suppression d'utilisateurs
+- [x] Recherche et Filtrage
+
+**Progression** : 100%  
+**Statut** : ✅ TERMINÉ (Intégré au Dashboard)
 
 ---
 

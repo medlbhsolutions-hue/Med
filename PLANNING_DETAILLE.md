@@ -146,10 +146,10 @@
 | Tâche | Description | Statut | Date |
 |-------|-------------|--------|------|
 | Composant sélection date | Calendrier interactif | ✅ Terminé | 21/12/2025 |
-| Composant sélection heure | Créneaux horaires disponibles | 🔄 En cours | 27/12/2025 |
-| API créer RDV | Endpoint pour créer un rendez-vous | 🔄 En cours | 28/12/2025 |
-| API modifier RDV | Endpoint pour modifier un RDV | 📅 À faire | 29/12/2025 |
-| API annuler RDV | Endpoint pour annuler un RDV | 📅 À faire | 29/12/2025 |
+| Composant sélection heure | Créneaux horaires disponibles | ✅ Terminé | 30/12/2025 |
+| API créer RDV | Endpoint pour créer un rendez-vous | ✅ Terminé | 30/12/2025 |
+| API modifier RDV | Endpoint pour modifier un RDV | ✅ Terminé | 30/12/2025 |
+| API annuler RDV | Endpoint pour annuler un RDV | ✅ Terminé | 30/12/2025 |
 | Confirmation email | Email automatique de confirmation | 📅 À faire | 02/01/2026 |
 | Rappel email | Email de rappel 24h avant | 📅 À faire | 03/01/2026 |
 | Notification push | Alerte en temps réel | 📅 À faire | 04/01/2026 |
@@ -162,8 +162,9 @@
 |-------|-------------|--------|------|
 | API liste cliniques | Endpoint pour récupérer les cliniques | ✅ Terminé | 16/12/2025 |
 | API créer clinique | Endpoint pour ajouter une clinique | ✅ Terminé | 16/12/2025 |
-| Page liste cliniques | Affichage avec recherche et filtres | 📅 À faire | 05/01/2026 |
-| Page détail clinique | Informations complètes de la clinique | 📅 À faire | 06/01/2026 |
+| Page liste cliniques | Affichage avec recherche et filtres | ✅ Terminé | 30/12/2025 |
+| Page détail clinique | Informations complètes de la clinique | ✅ Terminé | 30/12/2025 |
+| Gestion Admin Cliniques | Dashboard CRUD Cliniques | ✅ Terminé | 30/12/2025 |
 | Carte interactive | Google Maps avec localisation | 📅 À faire | 07/01/2026 |
 | Galerie photos | Carrousel de photos de la clinique | 📅 À faire | 08/01/2026 |
 | Liste médecins | Médecins associés à la clinique | 📅 À faire | 09/01/2026 |
@@ -206,7 +207,9 @@
 | Tâche | Description | Statut | Date |
 |-------|-------------|--------|------|
 | Dashboard admin | Vue d'ensemble statistiques | 📅 À faire | 20/01/2026 |
-| Gestion utilisateurs | CRUD utilisateurs | 📅 À faire | 21/01/2026 |
+| Interface gestion users | Tableau de bord admin utilisateurs | ✅ Terminé | 30/12/2025 |
+| API liste users | Récupération des utilisateurs | ✅ Terminé | 30/12/2025 |
+| API modifier user | Modification rôles et infos | ✅ Terminé | 30/12/2025 |
 | Gestion cliniques | Validation et modération | 📅 À faire | 22/01/2026 |
 | Gestion produits | CRUD produits | 📅 À faire | 23/01/2026 |
 | Gestion commandes | Suivi et traitement | 📅 À faire | 24/01/2026 |
