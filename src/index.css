@@ -10,16 +10,27 @@
   box-sizing: border-box;
 }
 
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
   width: 100%;
 }
 
 body {
-  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-family: 'Outfit', 'Segoe UI', sans-serif;
   color: #1A1F2E;
   background: linear-gradient(135deg, #f5f7fa 0%, #e8f0f7 100%);
   overflow-x: hidden;
+}
+
+/* Typography Utilities */
+.font-sans {
+  font-family: 'Outfit', sans-serif;
+}
+
+.font-serif {
+  font-family: 'Playfair Display', serif;
 }
 
 /* Design System - Modern Professional */
@@ -35,17 +46,17 @@ body {
   --color-success: #10B981;
   --color-warning: #F59E0B;
   --color-error: #EF4444;
-  
+
   --shadow-sm: 0 2px 8px rgba(0, 74, 173, 0.08);
   --shadow-md: 0 4px 16px rgba(0, 74, 173, 0.12);
   --shadow-lg: 0 8px 32px rgba(0, 74, 173, 0.16);
   --shadow-xl: 0 16px 48px rgba(0, 74, 173, 0.2);
-  
+
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
   --radius-xl: 24px;
-  
+
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -110,6 +121,7 @@ html {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -121,6 +133,7 @@ html {
     opacity: 0;
     transform: translateX(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -132,6 +145,7 @@ html {
     opacity: 0;
     transform: translateX(30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -143,6 +157,7 @@ html {
     opacity: 0;
     transform: scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -150,9 +165,12 @@ html {
 }
 
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0.8;
   }
@@ -162,6 +180,7 @@ html {
   0% {
     background-position: -1000px 0;
   }
+
   100% {
     background-position: 1000px 0;
   }
@@ -208,11 +227,12 @@ html {
 
 /* Component Styles */
 @layer components {
+
   /* Buttons */
   .btn-primary {
     @apply relative overflow-hidden bg-gradient-to-r from-[#5de0e6] to-[#004AAD] text-white font-semibold py-3 px-8 rounded-xl transition-all duration-300 ease-out transform hover:scale-105 hover:shadow-xl;
   }
-  
+
   .btn-primary::before {
     content: '';
     position: absolute;
@@ -223,7 +243,7 @@ html {
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
     transition: left 0.5s;
   }
-  
+
   .btn-primary:hover::before {
     left: 100%;
   }
@@ -231,7 +251,7 @@ html {
   .btn-secondary {
     @apply bg-white text-[#004AAD] font-semibold py-3 px-8 rounded-xl border-2 border-[#5de0e6] transition-all duration-300 ease-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#5de0e6] hover:to-[#004AAD] hover:text-white hover:border-transparent hover:shadow-lg;
   }
-  
+
   .btn-outline {
     @apply bg-transparent text-[#004AAD] font-semibold py-3 px-8 rounded-xl border-2 border-[#004AAD] transition-all duration-300 ease-out hover:bg-[#004AAD] hover:text-white hover:shadow-lg;
   }
@@ -240,11 +260,11 @@ html {
   .card {
     @apply bg-white rounded-2xl shadow-md p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2;
   }
-  
+
   .card-gradient {
     @apply relative bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-md p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 overflow-hidden;
   }
-  
+
   .card-gradient::before {
     content: '';
     position: absolute;
@@ -259,7 +279,7 @@ html {
   .section-title {
     @apply text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#5de0e6] to-[#004AAD] bg-clip-text text-transparent;
   }
-  
+
   .section-subtitle {
     @apply text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-12;
   }
@@ -268,7 +288,7 @@ html {
   .input-field {
     @apply w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#5de0e6] focus:ring-2 focus:ring-[#5de0e6]/20 transition-all duration-300;
   }
-  
+
   .input-field:focus {
     @apply shadow-lg;
   }
@@ -282,11 +302,11 @@ html {
   .bg-gradient-primary {
     @apply bg-gradient-to-r from-[#5de0e6] to-[#004AAD];
   }
-  
+
   .bg-gradient-primary-reverse {
     @apply bg-gradient-to-r from-[#004AAD] to-[#5de0e6];
   }
-  
+
   .bg-gradient-radial {
     background: radial-gradient(circle at top right, #5de0e6 0%, #004AAD 100%);
   }
@@ -295,9 +315,9 @@ html {
   .hover-lift {
     @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
   }
-  
+
   .hover-glow {
-    @apply transition-all duration-300 hover:shadow-[0_0_30px_rgba(93,224,230,0.5)];
+    @apply transition-all duration-300 hover:shadow-[0_0_30px_rgba(93, 224, 230, 0.5)];
   }
 
   /* Badge */
@@ -332,7 +352,7 @@ html {
   .section-title {
     @apply text-3xl;
   }
-  
+
   .section-subtitle {
     @apply text-base;
   }

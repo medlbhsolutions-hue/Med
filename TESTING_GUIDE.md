@@ -252,30 +252,49 @@ Vérifier les infos MedLBH:
 - [ ] Lieu: Casablanca - Grenoble
 - [ ] Site: www.medlbhsolutions.com
 
----
+### 📅 Gestion des Rendez-vous
 
-## 📊 Tests de Performance
+**Prérequis : Base de données**
+Vous devez d'abord créer la table `appointments` dans votre interface Supabase (SQL Editor) en utilisant le script suivant :
+```sql
+create table if not exists appointments (
+  id uuid default uuid_generate_v4() primary key,
+  doctor_id uuid references users(id),
+  patient_id uuid references users(id), -- Optionnel
+  patient_name text,
+  date timestamp with time zone not null,
+  duration text,
+  type text,
+  status text default 'confirmed',
+  notes text,
+  created_at timestamp with time zone default timezone('utc'::text, now()),
+  updated_at timestamp with time zone default timezone('utc'::text, now())
+);
+```
 
-- [ ] Page d'accueil charge < 3s
-- [ ] Dashboard < 2s
-- [ ] Pas de lag au scroll
-- [ ] Chatbot répond < 2s
-- [ ] Images chargent rapidement
-- [ ] Pas d'erreur en console
+**Scénarios de test :**
 
----
+1. **Vérification de l'affichage :**
+   - [ ] Connectez-vous et allez sur le Dashboard.
+   - [ ] Vérifiez que la section "Aperçu du jour" affiche les statistiques (0 par défaut).
+   - [ ] Vérifiez que la Timeline affiche "Aucun rendez-vous prévu" si la liste est vide.
 
-## ✅ Validation Finale
+2. **Création d'un RDV :**
+   - [ ] Cliquez sur le bouton "Nouveau RDV".
+   - [ ] Remplissez le formulaire (Patient, Heure, Type, Durée).
+   - [ ] Cliquez sur "Créer".
+   - [ ] Le RDV doit apparaître immédiatement dans la timeline.
+   - [ ] Les statistiques "Total RDV" doivent s'incrémenter.
 
-Avant de déployer, vérifier:
+3. **Modification de statut :**
+   - [ ] Sur un RDV dans la timeline, cliquez sur le bouton "Annuler" (X rouge).
+   - [ ] Le statut doit passer à "Annulé" (badge rouge).
+   - [ ] Le bouton "Confirmer" (V vert) doit apparaître (si le statut n'est pas déjà confirmé).
+   - [ ] Cliquez sur "Confirmer", le statut doit passer à "Confirmé" (badge vert).
 
-- [ ] Tous les tests passent
-- [ ] Pas d'erreurs console
-- [ ] Responsive sur tous les écrans
-- [ ] Chatbot fonctionne
-- [ ] BD synced
-- [ ] Variables d'environnement configurées
-- [ ] Documentation à jour
+4. **Navigation Calendrier :**
+   - [ ] Utilisez les flèches "<" et ">" à côté de la date.
+   - [ ] Vérifiez que la liste se met à jour pour afficher les RDV de la date sélectionnée.
 
 ---
 

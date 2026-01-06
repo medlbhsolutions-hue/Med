@@ -30,8 +30,8 @@ const ContactPage = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'llabhilil@yahoo.fr',
-      link: 'mailto:llabhilil@yahoo.fr',
+      value: 'contact@medlbhsolution.ma',
+      link: 'mailto:contact@medlbhsolution.ma',
       gradient: 'from-purple-500 to-pink-500',
     },
     {

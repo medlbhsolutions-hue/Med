@@ -28,10 +28,12 @@ const ClinicsManagementSection = () => {
 
     const fetchClinics = async () => {
         try {
-            const { data } = await clinicService.getAll();
-            setClinics(data || []);
+            const response = await clinicService.getAll();
+            const data = response.data || response;
+            setClinics(Array.isArray(data) ? data : []);
         } catch (error) {
             console.error('Error fetching clinics:', error);
+            setClinics([]);
         } finally {
             setLoading(false);
         }

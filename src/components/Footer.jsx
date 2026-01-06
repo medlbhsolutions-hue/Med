@@ -11,7 +11,7 @@ import {
   ArrowRight,
   Send
 } from 'lucide-react';
-import logo from '../assets/images/logo-premium.png';
+import logo from '../assets/images/logo-new.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -59,7 +59,7 @@ const Footer = () => {
               <img
                 src={logo}
                 alt="MedLBH Solutions logo"
-                className="h-12 w-auto object-contain"
+                className="h-16 w-auto object-contain"
               />
             </Link>
             <p className="text-gray-400 leading-relaxed text-base lg:text-lg max-w-sm">
@@ -152,8 +152,8 @@ const Footer = () => {
                 <div className="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center flex-shrink-0 text-secondary group-hover:bg-secondary group-hover:text-white transition-all duration-300">
                   <Mail size={16} />
                 </div>
-                <a href="mailto:llabhilil@yahoo.fr" className="text-gray-400 text-sm group-hover:text-white transition-colors">
-                  llabhilil@yahoo.fr
+                <a href="mailto:contact@medlbhsolution.ma" className="text-gray-400 text-sm group-hover:text-white transition-colors">
+                  contact@medlbhsolution.ma
                 </a>
               </li>
             </ul>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,12 +12,14 @@
             background-color: #f5f9ff;
             color: #333;
         }
+
         .header {
             background-color: #0056b3;
             color: white;
             padding: 20px 0;
             margin-bottom: 30px;
         }
+
         .logo-container {
             background-color: white;
             border-radius: 10px;
@@ -24,6 +27,7 @@
             display: inline-block;
             margin-right: 20px;
         }
+
         .form-container {
             background-color: white;
             border-radius: 10px;
@@ -31,24 +35,29 @@
             padding: 30px;
             margin-bottom: 30px;
         }
+
         .section-title {
             color: #0056b3;
             border-bottom: 2px solid #ff6b00;
             padding-bottom: 10px;
             margin-bottom: 20px;
         }
+
         .btn-primary {
             background-color: #0056b3;
             border-color: #0056b3;
         }
+
         .btn-primary:hover {
             background-color: #003d80;
             border-color: #003d80;
         }
+
         .required-field::after {
             content: " *";
             color: #ff6b00;
         }
+
         .highlight-box {
             background-color: rgba(255, 107, 0, 0.1);
             border-left: 4px solid #ff6b00;
@@ -57,6 +66,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="header text-center">
         <div class="logo-container">
@@ -68,8 +78,10 @@
 
     <div class="container">
         <div class="highlight-box">
-            <h5><i class="fas fa-info-circle"></i> Un monitoring dès le lancement évite l'installation de mauvaises conduites</h5>
-            <p>Notre accompagnement vous permet de structurer votre activité selon les meilleures pratiques dès le départ.</p>
+            <h5><i class="fas fa-info-circle"></i> Un monitoring dès le lancement évite l'installation de mauvaises
+                conduites</h5>
+            <p>Notre accompagnement vous permet de structurer votre activité selon les meilleures pratiques dès le
+                départ.</p>
         </div>
 
         <div class="form-container">
@@ -190,7 +202,8 @@
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="foreignDoctors">
-                            <label class="form-check-label" for="foreignDoctors">Accompagnement administratif pour médecins étrangers</label>
+                            <label class="form-check-label" for="foreignDoctors">Accompagnement administratif pour
+                                médecins étrangers</label>
                         </div>
                     </div>
                 </div>
@@ -211,7 +224,8 @@
                         <label for="investmentRange" class="form-label">Budget d'investissement estimé</label>
                         <select class="form-select" id="investmentRange">
                             <option value="" selected disabled>Sélectionner...</option>
-                            <option value="range1">< 500 000 €</option>
+                            <option value="range1">
+                                < 500 000 €</option>
                             <option value="range2">500 000 € - 1 million €</option>
                             <option value="range3">1 - 5 millions €</option>
                             <option value="range4">5 - 10 millions €</option>
@@ -223,25 +237,29 @@
                 <div class="row mb-4">
                     <div class="col-md-6">
                         <label for="specialties" class="form-label">Spécialités prévues</label>
-                        <textarea class="form-control" id="specialties" rows="3" placeholder="Listez les spécialités médicales prévues dans votre établissement..."></textarea>
+                        <textarea class="form-control" id="specialties" rows="3"
+                            placeholder="Listez les spécialités médicales prévues dans votre établissement..."></textarea>
                     </div>
                     <div class="col-md-6">
                         <label for="equipments" class="form-label">Équipements majeurs prévus</label>
-                        <textarea class="form-control" id="equipments" rows="3" placeholder="Listez les équipements médicaux majeurs prévus..."></textarea>
+                        <textarea class="form-control" id="equipments" rows="3"
+                            placeholder="Listez les équipements médicaux majeurs prévus..."></textarea>
                     </div>
                 </div>
 
                 <div class="row mb-4">
                     <div class="col-12">
                         <label for="projectDescription" class="form-label required-field">Description du projet</label>
-                        <textarea class="form-control" id="projectDescription" rows="5" required placeholder="Décrivez votre projet, ses objectifs, son positionnement et les défis anticipés..."></textarea>
+                        <textarea class="form-control" id="projectDescription" rows="5" required
+                            placeholder="Décrivez votre projet, ses objectifs, son positionnement et les défis anticipés..."></textarea>
                     </div>
                 </div>
 
                 <div class="row mb-4">
                     <div class="col-12">
                         <label for="specificNeeds" class="form-label">Besoins spécifiques</label>
-                        <textarea class="form-control" id="specificNeeds" rows="3" placeholder="Précisez vos attentes particulières concernant l'accompagnement..."></textarea>
+                        <textarea class="form-control" id="specificNeeds" rows="3"
+                            placeholder="Précisez vos attentes particulières concernant l'accompagnement..."></textarea>
                     </div>
                 </div>
 
@@ -263,7 +281,8 @@
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="consentCheck" required>
                             <label class="form-check-label required-field" for="consentCheck">
-                                J'accepte que mes données personnelles soient traitées par MedLBH Solutions dans le cadre de ma demande d'accompagnement.
+                                J'accepte que mes données personnelles soient traitées par MedLBH Solutions dans le
+                                cadre de ma demande d'accompagnement.
                             </label>
                         </div>
                     </div>
@@ -271,7 +290,8 @@
 
                 <div class="row mt-5">
                     <div class="col-12 text-center">
-                        <button type="submit" class="btn btn-primary btn-lg">Soumettre ma demande d'accompagnement</button>
+                        <button type="submit" class="btn btn-primary btn-lg">Soumettre ma demande
+                            d'accompagnement</button>
                     </div>
                 </div>
             </form>
@@ -281,11 +301,12 @@
     <footer class="bg-light text-center text-muted py-4">
         <div class="container">
             <p>© 2025 MedLBH Solutions - Medical & Human Bridges</p>
-            <p>Contact : llabhilil@yahoo.fr | +212 6 90 40 52 69</p>
+            <p>Contact : contact@medlbhsolution.ma | +212 6 90 40 52 69</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
+
 </html>

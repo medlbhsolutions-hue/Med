@@ -59,3 +59,18 @@ create table if not exists chat_history (
   context text,
   created_at timestamp with time zone default timezone('utc'::text, now())
 );
+
+-- Appointments Table
+create table if not exists appointments (
+  id uuid default uuid_generate_v4() primary key,
+  doctor_id uuid references users(id),
+  patient_id uuid references users(id), -- Optional
+  patient_name text,
+  date timestamp with time zone not null,
+  duration text,
+  type text,
+  status text default 'pending', -- 'pending', 'confirmed', 'cancelled'
+  notes text,
+  created_at timestamp with time zone default timezone('utc'::text, now()),
+  updated_at timestamp with time zone default timezone('utc'::text, now())
+);

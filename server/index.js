@@ -6,6 +6,7 @@ import authRoutes from './routes/auth.js';
 import clinicRoutes from './routes/clinics.js';
 import chatRoutes from './routes/chat.js';
 import newsRoutes from './routes/news.js';
+import appointmentRoutes from './routes/appointments.js';
 
 dotenv.config();
 
@@ -23,6 +24,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/clinics', clinicRoutes);
 app.use('/api/chat', chatRoutes);
 app.use('/api/news', newsRoutes);
+app.use('/api/appointments', appointmentRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {

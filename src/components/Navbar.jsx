@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, User, LogOut, Globe } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import logo from '../assets/images/logo-premium.png';
+import logo from '../assets/images/logo-new.png';
 import { useAuth } from '../context/AuthContext';
 
 const Navbar = () => {
@@ -60,7 +60,7 @@ const Navbar = () => {
                 <img
                   src={logo}
                   alt="MedLBH Solutions"
-                  className="h-16 w-auto transition-transform duration-300 group-hover:scale-105"
+                  className="h-20 w-auto transition-transform duration-300 group-hover:scale-105"
                 />
                 {/* Subtle glow on hover */}
                 <div className="absolute inset-0 bg-gradient-to-r from-[#00A8E8]/20 to-[#5de0e6]/20 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300 -z-10" />

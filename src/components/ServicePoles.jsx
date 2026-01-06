@@ -11,6 +11,7 @@ const ServicePoles = () => {
       gradient: 'from-blue-500 to-cyan-500',
       items: [
         'Sélection et recrutement de médecins spécialistes et cadres de santé',
+        'Expertise RH & Gestion des Carrières (Ossature de l\'établissement)',
         'Accompagnement administratif complet (CNOM, visa, équivalence, installation)',
         'Intégration professionnelle et sociale (famille, logement, scolarité)',
         'Conventions exclusives d\'installation sur 3 à 5 ans',
@@ -26,7 +27,8 @@ const ServicePoles = () => {
         'Constitution d\'équipe médicale qualifiée',
         'Élaboration du parcours patient',
         'Assistance à la certification',
-        'Accompagnement administratif et fiscal',
+        'Fiscalité et Expertise Comptable (Experts Agréés)',
+        'Expertise Juridique & Réglementaire (Droit de la Santé)',
         'Monitoring dès le lancement contre les mauvaises pratiques',
       ]
     },

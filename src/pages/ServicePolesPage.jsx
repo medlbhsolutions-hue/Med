@@ -1,74 +1,90 @@
 import { motion } from 'framer-motion';
-import { HeartPulse, Building2, Stethoscope, Users, TrendingUp, ArrowRight, CheckCircle2, Sparkles, Target, Award, Zap } from 'lucide-react';
+import { HeartPulse, Building2, Stethoscope, Users, TrendingUp, ArrowRight, CheckCircle2, Sparkles, Target, Award, Zap, Scale, FileText, Headphones, Laptop } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ServicePolesPage = () => {
   const services = [
     {
-      icon: HeartPulse,
-      title: 'Recrutement médical',
-      description: 'Sélection et mise en relation de talents médicaux d\'excellence adaptés à vos besoins spécifiques.',
+      icon: Users,
+      title: 'Expertise RH & Recrutement',
+      description: 'Chasse de tête spécialisée (Médecins, Infirmiers), gestion des carrières et staffing intérimaire pour optimiser vos équipes.',
       gradient: 'from-[#00A8E8] to-[#5de0e6]',
       features: [
-        'Sourcing de profils qualifiés',
-        'Évaluation des compétences',
-        'Accompagnement à l\'intégration',
-        'Suivi post-recrutement'
+        'Sélection et recrutement de médecins spécialistes et cadres de santé',
+        'Accompagnement administratif complet (CNOM, visa, équivalence, installation)',
+        'Intégration professionnelle et sociale (famille, logement, scolarité)',
+        'Conventions exclusives d\'installation sur 3 à 5 ans'
       ],
-      stats: { value: '500+', label: 'Professionnels recrutés' }
+      stats: { value: '500+', label: 'Profils placés' }
+    },
+    {
+      icon: Scale,
+      title: 'Conseil Juridique, Comptabilité & Conformité',
+      description: 'Double expertise pour sécuriser votre activité : accompagnement légal complet et gestion comptable rigoureuse.',
+      gradient: 'from-purple-500 to-pink-500',
+      features: [
+        'Droit de la Santé & Contrats',
+        'Expertise comptable & Fiscale',
+        'Gestion de la paie',
+        'Veille réglementaire'
+      ],
+      stats: { value: '100%', label: 'Conformité & Rigueur' }
+    },
+    {
+      icon: FileText,
+      title: 'Facturation, Recouvrement & Optimisation',
+      description: 'Maximisation de vos revenus : de l\'audit de facturation à la récupération active de vos créances impayées.',
+      gradient: 'from-green-500 to-emerald-500',
+      features: [
+        'Suivi et relance des créances (CNSS, CNOP, mutuelles, assurances)',
+        'Gestion des PEC et facturations hospitalières',
+        'Réconciliation et traçabilité des dossiers',
+        'Audit et reporting mensuel de performance',
+        'Médiation et résolution de litiges administratifs'
+      ],
+      stats: { value: '+25%', label: 'Trésorerie récupérée' }
+    },
+    {
+      icon: Headphones,
+      title: 'Centre de Relation Patient',
+      description: 'Un centre d\'appels médical dédié pour gérer vos flux entrants, vos rendez-vous et rassurer vos patients 24/7.',
+      gradient: 'from-orange-500 to-red-500',
+      features: [
+        'Permanence téléphonique 24/7',
+        'Prise de RDV & Télé-secrétariat',
+        'Gestion des urgences',
+        'Enquêtes de satisfaction'
+      ],
+      stats: { value: '<30s', label: 'Temps d\'attente moyen' }
+    },
+    {
+      icon: Laptop,
+      title: 'Solutions Digitales & IT',
+      description: 'Développement sur mesure de vos outils numériques : sites web vitrine, applications mobiles patients et logiciels métiers.',
+      gradient: 'from-blue-600 to-indigo-600',
+      features: [
+        'Sites Web & Portails Patient',
+        'Applications Mobiles (iOS/Android)',
+        'Logiciels de Gestion (ERP/HIS)',
+        'Cybersécurité des données de santé'
+      ],
+      stats: { value: 'New', label: 'Innovation Tech' }
     },
     {
       icon: Building2,
-      title: 'Installation d\'établissements',
-      description: 'Accompagnement complet dans la création, l\'installation et l\'ouverture de structures de santé modernes.',
-      gradient: 'from-purple-500 to-pink-500',
+      title: 'Accompagnement Structuration',
+      description: 'Accompagnement au lancement de votre activité',
+      gradient: 'from-teal-500 to-cyan-500',
       features: [
-        'Étude de faisabilité',
-        'Conception architecturale',
-        'Équipement médical',
-        'Mise en conformité'
+        'Études de faisabilité et business plan',
+        'Constitution d\'équipe médicale qualifiée',
+        'Élaboration du parcours patient',
+        'Assistance à la certification',
+        'Accompagnement administratif et fiscal',
+        'Monitoring dès le lancement contre les mauvaises pratiques'
       ],
-      stats: { value: '50+', label: 'Établissements créés' }
-    },
-    {
-      icon: Stethoscope,
-      title: 'Accompagnement opérationnel',
-      description: 'Support quotidien pour optimiser la gestion, la qualité et l\'organisation de votre établissement médical.',
-      gradient: 'from-green-500 to-emerald-500',
-      features: [
-        'Optimisation des processus',
-        'Formation du personnel',
-        'Gestion de la qualité',
-        'Support administratif'
-      ],
-      stats: { value: '98%', label: 'Satisfaction client' }
-    },
-    {
-      icon: Users,
-      title: 'Recouvrement',
-      description: 'Optimisation des processus de facturation et de recouvrement pour assurer la pérennité financière.',
-      gradient: 'from-orange-500 to-red-500',
-      features: [
-        'Audit financier',
-        'Optimisation facturation',
-        'Gestion des impayés',
-        'Reporting détaillé'
-      ],
-      stats: { value: '+35%', label: 'Amélioration moyenne' }
-    },
-    {
-      icon: TrendingUp,
-      title: 'Développement stratégique',
-      description: 'Conseil en stratégie, expansion et développement pour propulser votre établissement vers l\'excellence.',
-      gradient: 'from-indigo-500 to-blue-500',
-      features: [
-        'Analyse de marché',
-        'Plan de développement',
-        'Stratégie de croissance',
-        'Accompagnement à l\'expansion'
-      ],
-      stats: { value: '15+', label: 'Années d\'expertise' }
-    },
+      stats: { value: '50+', label: 'Projets lancés' }
+    }
   ];
 
   const benefits = [
@@ -225,6 +241,138 @@ const ServicePolesPage = () => {
                 </motion.div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+
+      {/* Strategic Vision Section (From Analysis) */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-6 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center max-w-4xl mx-auto mb-16"
+          >
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Une vision <span className="text-[#00A8E8]">360°</span> de votre établissement
+            </h2>
+            <p className="text-xl text-gray-600">
+              Notre méthode accompagne le cycle de vie complet de votre structure, de sa naissance à sa pérennité.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                step: '01',
+                title: 'Structurer',
+                desc: 'Études de faisabilité, Business Plan et Conformité pour lancer sur des bases saines.',
+                color: 'bg-purple-100 text-purple-600'
+              },
+              {
+                step: '02',
+                title: 'Recruter',
+                desc: 'Constitution des équipes médicales "Core Team" et gestion de la mobilité internationale.',
+                color: 'bg-blue-100 text-[#00A8E8]'
+              },
+              {
+                step: '03',
+                title: 'Développer',
+                desc: 'Négociation de conventions, partenariats investisseurs et communication institutionnelle.',
+                color: 'bg-indigo-100 text-indigo-600'
+              },
+              {
+                step: '04',
+                title: 'Optimiser',
+                desc: 'Recouvrement actif, audit de performance et sécurisation de la trésorerie.',
+                color: 'bg-green-100 text-green-600'
+              }
+            ].map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group"
+              >
+                <div className={`absolute top-0 right-0 w-24 h-24 -mr-6 -mt-6 rounded-full opacity-20 ${item.color.split(' ')[0]}`} />
+                <span className={`text-4xl font-black opacity-20 mb-4 block ${item.color.split(' ')[1]}`}>{item.step}</span>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section (From Analysis) */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <div className="lg:w-1/2">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+              >
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-full mb-6">
+                  <Award size={16} className="text-[#00A8E8]" />
+                  <span className="text-sm font-bold text-[#00A8E8]">Pourquoi MedLBH ?</span>
+                </div>
+                <h2 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                  L'alliance de l'<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00A8E8] to-blue-600">Expertise Médicale</span> et de la Performance
+                </h2>
+                <p className="text-lg text-gray-600 mb-8">
+                  Nous ne sommes pas de simples consultants. Nous sommes des partenaires engagés dans votre réussite opérationnelle et financière.
+                </p>
+
+                <div className="space-y-6">
+                  {[
+                    { title: 'Expertise Sectorielle', desc: 'Connaissance pointue des enjeux de santé au Maroc et en France.' },
+                    { title: 'Approche Intégrée', desc: 'Un interlocuteur unique pour le RH, le Juridique, la Tech et la Gestion.' },
+                    { title: 'Résultats Mesurables', desc: 'Culture du KPI : nous visons l\'impact direct sur votre trésorerie et votre qualité.' }
+                  ].map((feat, i) => (
+                    <div key={i} className="flex gap-4">
+                      <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0 text-[#00A8E8]">
+                        <CheckCircle2 size={24} />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-gray-900">{feat.title}</h4>
+                        <p className="text-sm text-gray-600">{feat.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+
+            <div className="lg:w-1/2 relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#00A8E8] to-blue-600 rounded-3xl opacity-10 transform rotate-3" />
+              <div className="bg-gray-900 rounded-3xl p-8 relative shadow-2xl text-white">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
+                    <Target size={32} className="text-[#00A8E8]" />
+                  </div>
+                  <div>
+                    <div className="text-sm text-gray-400">Notre Mission</div>
+                    <div className="text-xl font-bold">Medical & Human Bridges</div>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-lg leading-relaxed mb-8">
+                  "Créer des ponts pour ceux qui sauvent des vies. Notre ambition est de connecter les talents, les structures et les innovations pour bâtir l'hôpital de demain."
+                </p>
+                <div className="flex items-center gap-4 border-t border-gray-700 pt-6">
+                  <div className="w-12 h-12 bg-gray-700 rounded-full" /> {/* Placeholder for Founder Photo */}
+                  <div>
+                    <div className="font-bold">Nadia Labhilil</div>
+                    <div className="text-sm text-[#00A8E8]">Fondatrice MedLBH Solutions</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
